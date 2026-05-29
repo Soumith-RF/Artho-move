@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARtho Move — Brand Direction 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+
+body {
+  font-family:'DM Sans', system-ui, sans-serif;
+  background:#FAFAF8;
+  color:#1A1A18;
+  display:flex;
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+.nav {
+  position:fixed; left:0; top:0; bottom:0; width:180px;
+  background:#0C0C0A;
+  display:flex; flex-direction:column;
+  z-index:200;
+  border-right:1px solid rgba(255,255,255,0.03);
+}
+.nav-top {
+  padding:28px 22px 22px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.nav-wordmark {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:14px; font-weight:600;
+  color:#EDEAE4; letter-spacing:-0.01em;
+}
+.nav-sub {
+  font-size:9px; font-weight:400;
+  color:#2E2E28; margin-top:4px;
+  letter-spacing:0.06em;
+}
+.nav-body { flex:1; overflow-y:auto; padding:18px 0 0; }
+.nav-group-label {
+  font-size:8px; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:#272720; padding:0 22px;
+  margin-bottom:5px; margin-top:14px;
+}
+.nav-group-label:first-child { margin-top:0; }
+.nav-link {
+  display:flex; align-items:center; gap:9px;
+  padding:7px 22px;
+  font-size:11px; color:#404038;
+  text-decoration:none; cursor:pointer;
+  border-left:2px solid transparent;
+  transition:color 0.15s, border-color 0.15s;
+  line-height:1.3;
+}
+.nav-link:hover { color:#888878; }
+.nav-link.active { color:#EDEAE4; border-left-color:#EDEAE4; }
+.nav-pip {
+  width:5px; height:5px; border-radius:50%;
+  background:currentColor; flex-shrink:0; opacity:0.35;
+  transition:opacity 0.15s;
+}
+.nav-link.active .nav-pip { opacity:1; }
+.nav-foot {
+  padding:18px 22px;
+  border-top:1px solid rgba(255,255,255,0.04);
+}
+.nav-foot-text { font-size:9px; color:#222218; line-height:1.7; }
+
+/* ── MAIN ── */
+.main { margin-left:180px; min-width:0; flex:1; }
+
+/* ── COVER ── */
+.cover {
+  min-height:100vh;
+  background:#0C0C0A;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:72px 80px;
+  position:relative; overflow:hidden;
+}
+.cover-grid {
+  position:absolute; inset:0; opacity:0.025;
+  background-image:
+    linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+  background-size:52px 52px;
+  pointer-events:none;
+}
+.cover-arc {
+  position:absolute; top:-20%; right:-5%;
+  width:55vw; height:55vw; max-width:680px; max-height:680px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.025);
+  pointer-events:none;
+}
+.cover-arc2 {
+  position:absolute; top:-5%; right:5%;
+  width:38vw; height:38vw; max-width:480px; max-height:480px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.018);
+  pointer-events:none;
+}
+.cover-eyebrow {
+  font-size:10px; font-weight:500;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:#2C2C24; margin-bottom:16px;
+}
+.cover-title {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:clamp(56px,8vw,96px);
+  font-weight:600; color:#EDEAE4;
+  line-height:0.93; letter-spacing:-0.028em;
+  margin-bottom:8px;
+}
+.cover-sub {
+  font-size:16px; font-weight:300;
+  color:#3A3A32; letter-spacing:0.01em;
+  margin-bottom:64px;
+}
+.cover-meta { display:flex; gap:52px; }
+.cover-meta-lbl {
+  font-size:8px; font-weight:600;
+  letter-spacing:0.15em; text-transform:uppercase;
+  color:#242420; margin-bottom:5px;
+}
+.cover-meta-val { font-size:12px; color:#4A4A40; }
+.cover-scroll {
+  position:absolute; right:80px; bottom:36px;
+  font-size:9px; letter-spacing:0.12em; text-transform:uppercase;
+  color:#242420; display:flex; align-items:center; gap:10px;
+}
+.cover-scroll::before {
+  content:''; width:28px; height:1px; background:#242420; display:block;
+}
+
+/* ── SECTION BREAK ── */
+.sec-break {
+  background:#141410;
+  padding:56px 80px;
+}
+.sb-num {
+  font-size:9px; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:#2C2C24; margin-bottom:10px;
+}
+.sb-title {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:34px; font-weight:600;
+  color:#EDEAE4; letter-spacing:-0.015em; margin-bottom:10px;
+}
+.sb-desc {
+  font-size:13px; font-weight:400;
+  color:#3A3A30; max-width:560px; line-height:1.75;
+}
+
+/* ── COLOUR PANEL ── */
+.cpanel {
+  min-height:100vh; padding:72px 80px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.cp-ey {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:9px; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase;
+  margin-bottom:8px; opacity:0.85;
+}
+.cp-nm {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:40px; font-weight:600;
+  line-height:1.04; letter-spacing:-0.015em; margin-bottom:6px;
+}
+.cp-ds {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:13px; max-width:440px; line-height:1.75;
+  margin-bottom:36px; opacity:0.6;
+}
+.cp-cols {
+  display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:start;
+}
+.swatches { display:flex; gap:8px; margin-bottom:22px; }
+.sw { flex:1; }
+.sw-chip { height:52px; border-radius:7px; }
+.sw-nm {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:9px; font-weight:500; margin-top:6px; opacity:0.8;
+}
+.sw-hx {
+  font-family:'DM Sans', monospace; font-size:8.5px;
+  opacity:0.42; margin-top:1px;
+}
+.cp-rat {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:12px; line-height:1.75; opacity:0.55; max-width:440px;
+}
+
+/* ── UI CARD ── */
+.uc { border-radius:14px; overflow:hidden; }
+.uc-hd {
+  padding:15px 18px; display:flex; align-items:center; gap:10px;
+}
+.uc-av {
+  width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:600; flex-shrink:0;
+}
+.uc-nm { font-size:13px; font-weight:500; }
+.uc-rl { font-size:10px; margin-top:1px; opacity:0.55; }
+.uc-bdg {
+  margin-left:auto; font-size:9px; font-weight:600;
+  padding:3px 9px; border-radius:99px;
+  letter-spacing:0.04em; text-transform:uppercase;
+}
+.uc-bd { padding:15px 18px; }
+.uc-pr { border-radius:10px; padding:14px; margin-bottom:10px; }
+.uc-pnm { font-size:14px; font-weight:500; }
+.uc-pss { font-size:10px; margin-top:2px; margin-bottom:10px; opacity:0.55; }
+.uc-met { font-size:28px; font-weight:600; line-height:1; }
+.uc-ml { font-size:9px; opacity:0.48; margin-top:2px; }
+.uc-bg { height:4px; border-radius:99px; margin:6px 0; }
+.uc-br { height:4px; border-radius:99px; }
+.uc-st { display:flex; gap:16px; margin-top:12px; }
+.uc-sv { font-size:18px; font-weight:600; line-height:1; }
+.uc-sl { font-size:8px; opacity:0.42; margin-top:2px; }
+.uc-tgs { display:flex; gap:5px; flex-wrap:wrap; margin-top:10px; }
+.uc-tg { font-size:9px; font-weight:500; padding:3px 8px; border-radius:99px; }
+
+/* ── TYPE PANELS ── */
+.tpanel {
+  min-height:100vh;
+  display:grid; grid-template-columns:1fr 1fr;
+}
+.tp-l {
+  padding:72px 56px 72px 80px;
+  border-right:0.5px solid #E8E4DE;
+}
+.tp-r { padding:72px 80px 72px 56px; }
+.tp-ey {
+  font-size:9px; font-weight:500;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:#B0A898; margin-bottom:8px;
+}
+.tp-nm {
+  font-size:34px; font-weight:700;
+  color:#1A1A18; line-height:1.1; letter-spacing:-0.02em; margin-bottom:6px;
+}
+.tp-pr { font-size:12px; color:#8A8278; margin-bottom:40px; }
+.tp-it {
+  margin-bottom:18px; padding-bottom:18px;
+  border-bottom:0.5px solid #E8E4DE;
+}
+.tp-it:last-child { border-bottom:none; margin-bottom:0; }
+.tp-lb {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:8.5px; font-weight:500;
+  letter-spacing:0.13em; text-transform:uppercase;
+  color:#B8B0A8; margin-bottom:4px;
+}
+.tp-cx-lb {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:9px; font-weight:500;
+  letter-spacing:0.13em; text-transform:uppercase;
+  color:#9A9288; margin-bottom:16px;
+}
+.tp-cd {
+  background:#fff; border-radius:12px; padding:14px;
+  border:0.5px solid #DDD8CE; margin-bottom:10px;
+}
+.tp-bb { height:4px; border-radius:99px; background:#EDE8DE; margin:7px 0 3px; }
+.tp-bf { height:4px; border-radius:99px; }
+.tp-ww { border-radius:8px; padding:14px 16px; margin-top:4px; }
+.tp-wl {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:9px; font-weight:500;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:#9A9288; margin-bottom:10px;
+}
+.tp-wr { display:flex; gap:20px; align-items:baseline; }
+.tp-ws { font-size:22px; color:#1A1A18; line-height:1; }
+.tp-wt {
+  font-family:'DM Sans', system-ui, sans-serif;
+  font-size:8.5px; color:#9A9288; margin-top:3px;
+}
+
+/* ── CLOSING ── */
+.closing {
+  min-height:65vh; background:#0C0C0A;
+  padding:80px; display:flex; flex-direction:column; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.closing-grid {
+  position:absolute; inset:0; opacity:0.018;
+  background-image:
+    linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+  background-size:52px 52px; pointer-events:none;
+}
+.cl-ey {
+  font-size:9px; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:#242420; margin-bottom:14px;
+}
+.cl-ttl {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:clamp(36px,5vw,60px);
+  font-weight:600; color:#EDEAE4;
+  letter-spacing:-0.025em; line-height:1.08; margin-bottom:18px;
+}
+.cl-bd {
+  font-size:14px; color:#3A3A30;
+  max-width:500px; line-height:1.8; margin-bottom:56px;
+}
+.cl-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:600px; }
+.cl-card {
+  border:0.5px solid rgba(255,255,255,0.06);
+  border-radius:10px; padding:20px 22px;
+}
+.cl-card-lbl {
+  font-size:8px; font-weight:600;
+  letter-spacing:0.16em; text-transform:uppercase;
+  color:#242420; margin-bottom:14px;
+}
+.cl-opt { display:flex; align-items:center; gap:9px; margin-bottom:9px; }
+.cl-opt:last-child { margin-bottom:0; }
+.cl-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.cl-opt-txt { font-size:12px; color:#4A4A40; }
+
+/* ── ENTER ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.fade-in { opacity:0; }
+.fade-in.visible { animation:fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
+.fade-in:nth-child(2) { animation-delay:0.08s; }
+.fade-in:nth-child(3) { animation-delay:0.16s; }
+.fade-in:nth-child(4) { animation-delay:0.24s; }
+.fade-in:nth-child(5) { animation-delay:0.32s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" aria-label="Slide navigation">
+  <div class="nav-top">
+    <div class="nav-wordmark">ARtho Move</div>
+    <div class="nav-sub">Brand Direction — 2026</div>
+  </div>
+  <div class="nav-body">
+    <div class="nav-group-label">Colour Palette</div>
+    <a class="nav-link" href="#palette-a"><span class="nav-pip"></span>Slate &amp; Cream</a>
+    <a class="nav-link" href="#palette-c"><span class="nav-pip"></span>Deep Teal &amp; Oat</a>
+    <a class="nav-link" href="#palette-e"><span class="nav-pip"></span>Clinical Edge</a>
+    <a class="nav-link" href="#palette-f"><span class="nav-pip"></span>Eucalyptus &amp; Slate</a>
+    <div class="nav-group-label">Typography</div>
+    <a class="nav-link" href="#type-01"><span class="nav-pip"></span>The Specialist</a>
+    <a class="nav-link" href="#type-02"><span class="nav-pip"></span>The Platform</a>
+  </div>
+  <div class="nav-foot">
+    <div class="nav-foot-text">Confidential<br>ARtho Move © 2026</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- COVER -->
+  <section id="cover" class="cover">
+    <div class="cover-grid"></div>
+    <div class="cover-arc"></div>
+    <div class="cover-arc2"></div>
+    <div class="cover-eyebrow">Visual Identity — For Client Review</div>
+    <div class="cover-title">ARtho<br>Move</div>
+    <div class="cover-sub">Brand Direction Presentation</div>
+    <div class="cover-meta">
+      <div>
+        <div class="cover-meta-lbl">Prepared for</div>
+        <div class="cover-meta-val">ARtho Move</div>
+      </div>
+      <div>
+        <div class="cover-meta-lbl">Contents</div>
+        <div class="cover-meta-val">4 Colour Directions · 2 Typography Styles</div>
+      </div>
+      <div>
+        <div class="cover-meta-lbl">Date</div>
+        <div class="cover-meta-val">May 2026</div>
+      </div>
+    </div>
+    <div class="cover-scroll">Scroll to explore</div>
+  </section>
+
+  <!-- COLOUR SECTION BREAK -->
+  <div class="sec-break">
+    <div class="sb-num">Section 01 of 02</div>
+    <div class="sb-title">Colour Palette</div>
+    <div class="sb-desc">Four directions, all built on a warm human base. The primary colour is the key variable — every palette shares the same warmth in its backgrounds, surfaces, and neutrals. Pick the primary colour that best represents ARtho Move to your patients and your clinicians.</div>
+  </div>
+
+  <!-- ── PALETTE A: SLATE & CREAM ── -->
+  <section id="palette-a" class="cpanel" style="background:#F5F0E8;color:#1A2D3A">
+    <div class="cp-ey" style="color:#3D6B8E">Direction A</div>
+    <div class="cp-nm" style="color:#1A2D3A">Slate &amp; Cream</div>
+    <div class="cp-ds" style="color:#1A2D3A">A warm slate blue — clinical, trusted, and calm. The most established colour in healthcare, elevated here by a cream base that removes all institutional coldness.</div>
+    <div class="cp-cols">
+      <div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chip" style="background:#3D6B8E"></div><div class="sw-nm" style="color:#1A2D3A">Primary</div><div class="sw-hx" style="color:#1A2D3A">#3D6B8E</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#5A8BAD"></div><div class="sw-nm" style="color:#1A2D3A">Light</div><div class="sw-hx" style="color:#1A2D3A">#5A8BAD</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#F5F0E8;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#1A2D3A">Base</div><div class="sw-hx" style="color:#1A2D3A">#F5F0E8</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#EDE7D9;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#1A2D3A">Surface</div><div class="sw-hx" style="color:#1A2D3A">#EDE7D9</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#7A9E8A"></div><div class="sw-nm" style="color:#1A2D3A">Accent</div><div class="sw-hx" style="color:#1A2D3A">#7A9E8A</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#C4A882"></div><div class="sw-nm" style="color:#1A2D3A">Earth</div><div class="sw-hx" style="color:#1A2D3A">#C4A882</div></div>
+        </div>
+        <div class="cp-rat" style="color:#1A2D3A">Blue carries the deepest trust associations in global healthcare. The warm cream base stops it from reading corporate or institutional — the result is familiar credibility with human warmth.</div>
+      </div>
+      <div>
+        <div class="uc" style="border:0.5px solid rgba(0,0,0,0.07)">
+          <div class="uc-hd" style="background:#EDE7D9">
+            <div class="uc-av" style="background:#3D6B8E;color:#EDE7D9">DR</div>
+            <div><div class="uc-nm" style="color:#1A2D3A">Dr. Meera Krishnan</div><div class="uc-rl" style="color:#1A2D3A">Physiotherapist</div></div>
+            <div class="uc-bdg" style="background:#D4E8DC;color:#1E5830;margin-left:auto">Active</div>
+          </div>
+          <div class="uc-bd" style="background:#F5F0E8">
+            <div class="uc-pr" style="background:#EDE7D9">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#1A2D3A">Arjun Patel</div>
+                <div class="uc-bdg" style="background:#D0DEEA;color:#1A2D3A">84%</div>
+              </div>
+              <div class="uc-pss" style="color:#1A2D3A">Knee rehab · Week 3</div>
+              <div class="uc-met" style="color:#3D6B8E">84<span style="font-size:14px;opacity:0.45">%</span></div>
+              <div class="uc-ml" style="color:#1A2D3A">Today's accuracy</div>
+              <div class="uc-bg" style="background:#CCC6B8"><div class="uc-br" style="width:84%;background:#3D6B8E"></div></div>
+              <div class="uc-st">
+                <div><div class="uc-sv" style="color:#1A2D3A">12</div><div class="uc-sl" style="color:#1A2D3A">Reps</div></div>
+                <div><div class="uc-sv" style="color:#1A2D3A">142°</div><div class="uc-sl" style="color:#1A2D3A">Angle</div></div>
+                <div><div class="uc-sv" style="color:#C4A882">2</div><div class="uc-sl" style="color:#1A2D3A">Flagged</div></div>
+              </div>
+              <div class="uc-tgs">
+                <div class="uc-tg" style="background:#D4CCBC;color:#1A2D3A">Knee rehab</div>
+                <div class="uc-tg" style="background:#D4E8DC;color:#1E5830">Week 3</div>
+              </div>
+            </div>
+            <div class="uc-pr" style="background:#EDE7D9">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#1A2D3A">Priya Sharma</div>
+                <div class="uc-bdg" style="background:#F0DFCE;color:#7A4020;margin-left:auto">Rest</div>
+              </div>
+              <div class="uc-pss" style="color:#1A2D3A">Shoulder rehab · Week 1 · Pain: 3/10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PALETTE C: DEEP TEAL & OAT ── -->
+  <section id="palette-c" class="cpanel" style="background:#F4F0E5;color:#1A3535">
+    <div class="cp-ey" style="color:#2E7A7A">Direction C</div>
+    <div class="cp-nm" style="color:#1A3535">Deep Teal &amp; Oat</div>
+    <div class="cp-ds" style="color:#1A3535">Teal sits at the precise intersection of clinical blue and recovery green — carrying the credibility of medical technology and the healing associations of nature, simultaneously.</div>
+    <div class="cp-cols">
+      <div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chip" style="background:#2E7A7A"></div><div class="sw-nm" style="color:#1A3535">Primary</div><div class="sw-hx" style="color:#1A3535">#2E7A7A</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#4FA0A0"></div><div class="sw-nm" style="color:#1A3535">Light</div><div class="sw-hx" style="color:#1A3535">#4FA0A0</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#F4F0E5;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#1A3535">Base</div><div class="sw-hx" style="color:#1A3535">#F4F0E5</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#EBE6D8;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#1A3535">Surface</div><div class="sw-hx" style="color:#1A3535">#EBE6D8</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#C8884A"></div><div class="sw-nm" style="color:#1A3535">Accent</div><div class="sw-hx" style="color:#1A3535">#C8884A</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#D9C8A8"></div><div class="sw-nm" style="color:#1A3535">Earth</div><div class="sw-hx" style="color:#1A3535">#D9C8A8</div></div>
+        </div>
+        <div class="cp-rat" style="color:#1A3535">The amber clay accent creates a tension with the teal primary that is energetic and considered — not generic. This direction would be the most naturally premium in the modern digital-health landscape without resembling any competitor.</div>
+      </div>
+      <div>
+        <div class="uc" style="border:0.5px solid rgba(0,0,0,0.07)">
+          <div class="uc-hd" style="background:#EBE6D8">
+            <div class="uc-av" style="background:#2E7A7A;color:#EBE6D8">DR</div>
+            <div><div class="uc-nm" style="color:#1A3535">Dr. Meera Krishnan</div><div class="uc-rl" style="color:#1A3535">Physiotherapist</div></div>
+            <div class="uc-bdg" style="background:#C4E8D8;color:#1A5030;margin-left:auto">Active</div>
+          </div>
+          <div class="uc-bd" style="background:#F4F0E5">
+            <div class="uc-pr" style="background:#EBE6D8">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#1A3535">Arjun Patel</div>
+                <div class="uc-bdg" style="background:#BCE4E4;color:#0A4040">84%</div>
+              </div>
+              <div class="uc-pss" style="color:#1A3535">Knee rehab · Week 3</div>
+              <div class="uc-met" style="color:#2E7A7A">84<span style="font-size:14px;opacity:0.45">%</span></div>
+              <div class="uc-ml" style="color:#1A3535">Today's accuracy</div>
+              <div class="uc-bg" style="background:#CEC8B4"><div class="uc-br" style="width:84%;background:#2E7A7A"></div></div>
+              <div class="uc-st">
+                <div><div class="uc-sv" style="color:#1A3535">12</div><div class="uc-sl" style="color:#1A3535">Reps</div></div>
+                <div><div class="uc-sv" style="color:#1A3535">142°</div><div class="uc-sl" style="color:#1A3535">Angle</div></div>
+                <div><div class="uc-sv" style="color:#C8884A">2</div><div class="uc-sl" style="color:#1A3535">Flagged</div></div>
+              </div>
+              <div class="uc-tgs">
+                <div class="uc-tg" style="background:#CEC8B4;color:#1A3535">Knee rehab</div>
+                <div class="uc-tg" style="background:#EED8B8;color:#7A4820">Pain: 4/10</div>
+              </div>
+            </div>
+            <div class="uc-pr" style="background:#EBE6D8">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#1A3535">Priya Sharma</div>
+                <div class="uc-bdg" style="background:#EED8B8;color:#7A4820;margin-left:auto">Rest</div>
+              </div>
+              <div class="uc-pss" style="color:#1A3535">Shoulder rehab · Week 1 · Pain: 3/10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PALETTE E: CLINICAL EDGE ── -->
+  <section id="palette-e" class="cpanel" style="background:#F4EFE3;color:#0F1E35">
+    <div class="cp-ey" style="color:#0090FF">Direction E</div>
+    <div class="cp-nm" style="color:#0F1E35">The Clinical Edge</div>
+    <div class="cp-ds" style="color:#0F1E35">An electric cyan-blue that makes the AI and AR proposition feel genuinely high-tech. The warm oatmeal base prevents it from going cold — the contrast is the defining tension of this direction.</div>
+    <div class="cp-cols">
+      <div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chip" style="background:#0090FF"></div><div class="sw-nm" style="color:#0F1E35">Primary</div><div class="sw-hx" style="color:#0F1E35">#0090FF</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#B8DEFF"></div><div class="sw-nm" style="color:#0F1E35">Ice tint</div><div class="sw-hx" style="color:#0F1E35">#B8DEFF</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#F4EFE3;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#0F1E35">Base</div><div class="sw-hx" style="color:#0F1E35">#F4EFE3</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#FFFFFF;border:0.5px solid rgba(0,0,0,0.09)"></div><div class="sw-nm" style="color:#0F1E35">Surface</div><div class="sw-hx" style="color:#0F1E35">#FFFFFF</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#0A7A8C"></div><div class="sw-nm" style="color:#0F1E35">Marine</div><div class="sw-hx" style="color:#0F1E35">#0A7A8C</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#0F1E35"></div><div class="sw-nm" style="color:#0F1E35">Ink blue</div><div class="sw-hx" style="color:#0F1E35">#0F1E35</div></div>
+        </div>
+        <div class="cp-rat" style="color:#0F1E35">White cards over oatmeal create sharp, precise data hierarchy. Ink blue type reads more considered than standard black. Best suited for the doctor analytics dashboard and the AR session screen where high contrast serves the function.</div>
+      </div>
+      <div>
+        <div class="uc" style="border:0.5px solid rgba(0,0,0,0.07)">
+          <div class="uc-hd" style="background:#EAE5D8">
+            <div class="uc-av" style="background:#0090FF;color:#fff">DR</div>
+            <div><div class="uc-nm" style="color:#0F1E35">Dr. Meera Krishnan</div><div class="uc-rl" style="color:#0A7A8C;font-weight:500">Physiotherapist</div></div>
+            <div class="uc-bdg" style="background:#B8DEFF;color:#003A78;margin-left:auto">Active</div>
+          </div>
+          <div class="uc-bd" style="background:#F4EFE3">
+            <div class="uc-pr" style="background:#fff">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#0F1E35">Arjun Patel</div>
+                <div class="uc-bdg" style="background:#B8DEFF;color:#003A78">84%</div>
+              </div>
+              <div class="uc-pss" style="color:#4A6070">Knee rehab · Week 3</div>
+              <div class="uc-met" style="color:#0090FF">84<span style="font-size:14px;opacity:0.35">%</span></div>
+              <div class="uc-ml" style="color:#4A6070">Today's accuracy</div>
+              <div class="uc-bg" style="background:#E4DFD4"><div class="uc-br" style="width:84%;background:#0090FF"></div></div>
+              <div class="uc-st">
+                <div><div class="uc-sv" style="color:#0090FF">12</div><div class="uc-sl" style="color:#4A6070">Reps</div></div>
+                <div><div class="uc-sv" style="color:#0A7A8C">142°</div><div class="uc-sl" style="color:#4A6070">Angle</div></div>
+                <div><div class="uc-sv" style="color:#E06040">2</div><div class="uc-sl" style="color:#4A6070">Flagged</div></div>
+              </div>
+            </div>
+            <div class="uc-pr" style="background:#fff;margin-top:8px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#0F1E35">Priya Sharma</div>
+                <div class="uc-bdg" style="background:#FFE0CC;color:#8A3810;margin-left:auto">Rest</div>
+              </div>
+              <div class="uc-pss" style="color:#4A6070">Shoulder rehab · Week 1 · Pain: 3/10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PALETTE F: EUCALYPTUS & SLATE ── -->
+  <section id="palette-f" class="cpanel" style="background:#F6F3EE;color:#2E2218">
+    <div class="cp-ey" style="color:#3A8A82">Direction F</div>
+    <div class="cp-nm" style="color:#2E2218">Eucalyptus &amp; Slate</div>
+    <div class="cp-ds" style="color:#2E2218">A sophisticated mineral teal against soft chalk — the most editorially considered of the four. Espresso type ties the warm base to the body copy, keeping everything unified and organic.</div>
+    <div class="cp-cols">
+      <div>
+        <div class="swatches">
+          <div class="sw"><div class="sw-chip" style="background:#3A8A82"></div><div class="sw-nm" style="color:#2E2218">Mineral teal</div><div class="sw-hx" style="color:#2E2218">#3A8A82</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#B8D4CB"></div><div class="sw-nm" style="color:#2E2218">Pale sage</div><div class="sw-hx" style="color:#2E2218">#B8D4CB</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#F6F3EE;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#2E2218">Soft chalk</div><div class="sw-hx" style="color:#2E2218">#F6F3EE</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#FAF5EC;border:0.5px solid rgba(0,0,0,0.06)"></div><div class="sw-nm" style="color:#2E2218">Fresh cream</div><div class="sw-hx" style="color:#2E2218">#FAF5EC</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#C49070"></div><div class="sw-nm" style="color:#2E2218">Terracotta</div><div class="sw-hx" style="color:#2E2218">#C49070</div></div>
+          <div class="sw"><div class="sw-chip" style="background:#2E2218"></div><div class="sw-nm" style="color:#2E2218">Espresso</div><div class="sw-hx" style="color:#2E2218">#2E2218</div></div>
+        </div>
+        <div class="cp-rat" style="color:#2E2218">The chalk-to-cream surface layering creates depth without contrast drama. The most differentiated palette in the health technology market — closest to the Headspace and Kaia Health reference. Feels like a brand that belongs to people, not a system.</div>
+      </div>
+      <div>
+        <div class="uc" style="border:0.5px solid rgba(0,0,0,0.07)">
+          <div class="uc-hd" style="background:#EDE8DC">
+            <div class="uc-av" style="background:#3A8A82;color:#F6F3EE">DR</div>
+            <div><div class="uc-nm" style="color:#2E2218">Dr. Meera Krishnan</div><div class="uc-rl" style="color:#3A8A82;font-weight:500">Physiotherapist</div></div>
+            <div class="uc-bdg" style="background:#C4E0D8;color:#1A5048;margin-left:auto">Active</div>
+          </div>
+          <div class="uc-bd" style="background:#F6F3EE">
+            <div class="uc-pr" style="background:#FAF5EC;border:0.5px solid rgba(0,0,0,0.05)">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#2E2218">Arjun Patel</div>
+                <div class="uc-bdg" style="background:#B4D0C8;color:#1A5048">84%</div>
+              </div>
+              <div class="uc-pss" style="color:#6A5848">Knee rehab · Week 3</div>
+              <div class="uc-met" style="color:#3A8A82">84<span style="font-size:14px;opacity:0.4">%</span></div>
+              <div class="uc-ml" style="color:#6A5848">Today's accuracy</div>
+              <div class="uc-bg" style="background:#D8D2C4"><div class="uc-br" style="width:84%;background:#3A8A82"></div></div>
+              <div class="uc-st">
+                <div><div class="uc-sv" style="color:#3A8A82">12</div><div class="uc-sl" style="color:#6A5848">Reps</div></div>
+                <div><div class="uc-sv" style="color:#2E2218">142°</div><div class="uc-sl" style="color:#6A5848">Angle</div></div>
+                <div><div class="uc-sv" style="color:#C49070">2</div><div class="uc-sl" style="color:#6A5848">Flagged</div></div>
+              </div>
+              <div class="uc-tgs">
+                <div class="uc-tg" style="background:#D8D2C4;color:#4A3828">Knee rehab</div>
+                <div class="uc-tg" style="background:#E8D8C8;color:#7A4828">Pain: 4/10</div>
+              </div>
+            </div>
+            <div class="uc-pr" style="background:#FAF5EC;border:0.5px solid rgba(0,0,0,0.05);margin-top:8px">
+              <div style="display:flex;align-items:center;justify-content:space-between">
+                <div class="uc-pnm" style="color:#2E2218">Priya Sharma</div>
+                <div class="uc-bdg" style="background:#E8D8C8;color:#7A4828;margin-left:auto">Rest</div>
+              </div>
+              <div class="uc-pss" style="color:#6A5848">Shoulder rehab · Week 1 · Pain: 3/10</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY SECTION BREAK -->
+  <div class="sec-break">
+    <div class="sb-num">Section 02 of 02</div>
+    <div class="sb-title">Typography</div>
+    <div class="sb-desc">Two type pairings shown on a neutral base — colour removed so the typefaces can be evaluated on their own merit. Both are open-source Google Fonts, production-ready with no licensing cost.</div>
+  </div>
+
+  <!-- ── TYPE 01: THE SPECIALIST ── -->
+  <section id="type-01" class="tpanel" style="background:#FAFAF8">
+    <div class="tp-l" style="background:#FAFAF8">
+      <div class="tp-ey">Style 01 of 02</div>
+      <div class="tp-nm" style="font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.015em">The Specialist</div>
+      <div class="tp-pr">Fraunces (display &amp; headings) + DM Sans (body &amp; UI)</div>
+      <div class="tp-it"><div class="tp-lb">Display · 52px · Fraunces 600</div><div style="font-family:'Fraunces',Georgia,serif;font-size:52px;font-weight:600;color:#1A1A18;line-height:0.94;letter-spacing:-0.025em">ARtho Move</div></div>
+      <div class="tp-it"><div class="tp-lb">Heading 1 · 36px · Fraunces 600</div><div style="font-family:'Fraunces',Georgia,serif;font-size:36px;font-weight:600;color:#1A1A18;line-height:1.1;letter-spacing:-0.015em">Your recovery,<br>guided.</div></div>
+      <div class="tp-it"><div class="tp-lb">Heading 2 · 24px · Fraunces 400</div><div style="font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:400;color:#1A1A18;line-height:1.2">Today's session</div></div>
+      <div class="tp-it"><div class="tp-lb">Body large · 16px · DM Sans 400</div><div style="font-family:'DM Sans',system-ui,sans-serif;font-size:16px;font-weight:400;color:#3A3830;line-height:1.7">Your physiotherapist has updated your plan. Complete 3 sets to log your session.</div></div>
+      <div class="tp-it"><div class="tp-lb">Body · 14px · DM Sans 400</div><div style="font-family:'DM Sans',system-ui,sans-serif;font-size:14px;font-weight:400;color:#3A3830;line-height:1.65">Session starts in 10 minutes. Remember to complete your pain check.</div></div>
+      <div class="tp-it"><div class="tp-lb">Caption · 12px · DM Sans 400</div><div style="font-family:'DM Sans',system-ui,sans-serif;font-size:12px;font-weight:400;color:#9A9288">Last updated · 3 hours ago</div></div>
+      <div class="tp-it"><div class="tp-lb">Label · 10px · DM Sans 600 · Tracked</div><div style="font-family:'DM Sans',system-ui,sans-serif;font-size:10px;font-weight:600;color:#3A8A82;letter-spacing:0.1em;text-transform:uppercase">Active plan · Week 3 of 6</div></div>
+      <div class="tp-it"><div class="tp-lb">Pull quote · Fraunces 400 Italic</div><div style="font-family:'Fraunces',Georgia,serif;font-size:15px;font-weight:400;font-style:italic;color:#5A5248;line-height:1.7">"Rehabilitation, reimagined for the way people actually live."</div></div>
+    </div>
+    <div class="tp-r" style="background:#F2EDE4">
+      <div class="tp-cx-lb">In context</div>
+      <div class="tp-cd">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <div style="font-family:'Fraunces',Georgia,serif;font-size:16px;font-weight:600;color:#1A1A18">Arjun Patel</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:#E0F0EE;color:#266058">Active</div>
+        </div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:#9A9288;margin-bottom:10px">Knee rehabilitation · Week 3</div>
+        <div style="font-family:'Fraunces',Georgia,serif;font-size:30px;font-weight:600;color:#3A8A82;line-height:1">84<span style="font-size:15px;opacity:0.45">%</span></div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:#9A9288;margin-bottom:2px">Today's accuracy</div>
+        <div class="tp-bb"><div class="tp-bf" style="width:84%;background:#3A8A82"></div></div>
+        <div style="display:flex;gap:14px;margin-top:12px">
+          <div><div style="font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:600;color:#1A1A18;line-height:1">12</div><div style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9A9288;margin-top:2px">Reps</div></div>
+          <div><div style="font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:600;color:#1A1A18;line-height:1">142°</div><div style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9A9288;margin-top:2px">Angle</div></div>
+          <div><div style="font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:600;color:#C4906A;line-height:1">2</div><div style="font-family:'DM Sans',sans-serif;font-size:9px;color:#9A9288;margin-top:2px">Flagged</div></div>
+        </div>
+      </div>
+      <div style="background:#E8E2D6;border-radius:10px;padding:14px;margin-bottom:12px">
+        <div style="font-family:'DM Sans',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#9A9288;margin-bottom:7px">Patient app</div>
+        <div style="font-family:'Fraunces',Georgia,serif;font-size:20px;font-weight:600;color:#1A1A18;line-height:1.15">Session complete.<br>Great work today.</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:#5A5248;margin-top:8px;line-height:1.6">3 sets · 84% accuracy · Next: tomorrow 10:00 am</div>
+      </div>
+      <div class="tp-ww" style="background:#E2DCD0">
+        <div class="tp-wl">Fraunces weights</div>
+        <div class="tp-wr">
+          <div><div class="tp-ws" style="font-family:'Fraunces',Georgia,serif;font-weight:300">Ag</div><div class="tp-wt">300</div></div>
+          <div><div class="tp-ws" style="font-family:'Fraunces',Georgia,serif;font-weight:400">Ag</div><div class="tp-wt">400</div></div>
+          <div><div class="tp-ws" style="font-family:'Fraunces',Georgia,serif;font-weight:600">Ag</div><div class="tp-wt">600</div></div>
+          <div><div class="tp-ws" style="font-family:'Fraunces',Georgia,serif;font-weight:700">Ag</div><div class="tp-wt">700</div></div>
+          <div><div class="tp-ws" style="font-family:'Fraunces',Georgia,serif;font-weight:400;font-style:italic">Ag</div><div class="tp-wt">Italic</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TYPE 02: THE PLATFORM ── -->
+  <section id="type-02" class="tpanel" style="background:#F5F4F1">
+    <div class="tp-l" style="background:#F5F4F1;border-right-color:#DDD8D0">
+      <div class="tp-ey">Style 02 of 02</div>
+      <div class="tp-nm" style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;letter-spacing:-0.025em">The Platform</div>
+      <div class="tp-pr">Plus Jakarta Sans (display &amp; UI) + Figtree (body)</div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Display · 52px · Plus Jakarta Sans 800</div><div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:52px;font-weight:800;color:#1A1A18;line-height:0.91;letter-spacing:-0.03em">ARtho Move</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Heading 1 · 36px · Plus Jakarta Sans 700</div><div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:36px;font-weight:700;color:#1A1A18;line-height:1.08;letter-spacing:-0.02em">Your recovery,<br>guided.</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Heading 2 · 24px · Plus Jakarta Sans 600</div><div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:24px;font-weight:600;color:#1A1A18;line-height:1.15;letter-spacing:-0.01em">Today's session</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Body large · 16px · Figtree 400</div><div style="font-family:'Figtree',system-ui,sans-serif;font-size:16px;font-weight:400;color:#2A2A20;line-height:1.7">Your physiotherapist has updated your plan. Complete 3 sets to log your session.</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Body · 14px · Figtree 400</div><div style="font-family:'Figtree',system-ui,sans-serif;font-size:14px;font-weight:400;color:#2A2A20;line-height:1.65">Session starts in 10 minutes. Remember to complete your pain check.</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Caption · 12px · Figtree 400</div><div style="font-family:'Figtree',system-ui,sans-serif;font-size:12px;font-weight:400;color:#9A9288">Last updated · 3 hours ago</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Label · 10px · Plus Jakarta Sans 700 · Tracked</div><div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10px;font-weight:700;color:#0090C8;letter-spacing:0.1em;text-transform:uppercase">Active plan · Week 3 of 6</div></div>
+      <div class="tp-it" style="border-bottom-color:#DDD8D0"><div class="tp-lb">Data metric · 40px · Plus Jakarta Sans 700</div><div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:40px;font-weight:700;color:#1A1A18;line-height:1;letter-spacing:-0.025em">84<span style="font-size:20px;font-weight:500;color:#9A9288">%</span></div></div>
+    </div>
+    <div class="tp-r" style="background:#ECEAF4">
+      <div class="tp-cx-lb">In context</div>
+      <div class="tp-cd">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <div style="font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;font-weight:700;color:#1A1A18;letter-spacing:-0.01em">Arjun Patel</div>
+          <div style="font-family:'Figtree',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:#CCE4FF;color:#0040A0">Active</div>
+        </div>
+        <div style="font-family:'Figtree',sans-serif;font-size:11px;color:#8A8890;margin-bottom:10px">Knee rehabilitation · Week 3</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:30px;font-weight:700;color:#0090FF;line-height:1;letter-spacing:-0.02em">84<span style="font-size:15px;font-weight:500;opacity:0.35">%</span></div>
+        <div style="font-family:'Figtree',sans-serif;font-size:10px;color:#8A8890;margin-bottom:2px">Today's accuracy</div>
+        <div class="tp-bb" style="background:#E0DCF0"><div class="tp-bf" style="width:84%;background:#0090FF"></div></div>
+        <div style="display:flex;gap:14px;margin-top:12px">
+          <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1A1A18;line-height:1;letter-spacing:-0.01em">12</div><div style="font-family:'Figtree',sans-serif;font-size:9px;color:#8A8890;margin-top:2px">Reps</div></div>
+          <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1A1A18;line-height:1;letter-spacing:-0.01em">142°</div><div style="font-family:'Figtree',sans-serif;font-size:9px;color:#8A8890;margin-top:2px">Angle</div></div>
+          <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#E06040;line-height:1;letter-spacing:-0.01em">2</div><div style="font-family:'Figtree',sans-serif;font-size:9px;color:#8A8890;margin-top:2px">Flagged</div></div>
+        </div>
+      </div>
+      <div style="background:#E0DAEA;border-radius:10px;padding:14px;margin-bottom:12px">
+        <div style="font-family:'Figtree',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#8A8890;margin-bottom:7px">Patient app</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1A1A18;line-height:1.15;letter-spacing:-0.01em">Session complete.<br>Great work today.</div>
+        <div style="font-family:'Figtree',sans-serif;font-size:12px;color:#4A4860;margin-top:8px;line-height:1.6">3 sets · 84% accuracy · Next: tomorrow 10:00 am</div>
+      </div>
+      <div class="tp-ww" style="background:#D8D4EC">
+        <div class="tp-wl">Plus Jakarta Sans weights</div>
+        <div class="tp-wr">
+          <div><div class="tp-ws" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:300">Ag</div><div class="tp-wt">300</div></div>
+          <div><div class="tp-ws" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400">Ag</div><div class="tp-wt">400</div></div>
+          <div><div class="tp-ws" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600">Ag</div><div class="tp-wt">600</div></div>
+          <div><div class="tp-ws" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700">Ag</div><div class="tp-wt">700</div></div>
+          <div><div class="tp-ws" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800">Ag</div><div class="tp-wt">800</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="closing-grid"></div>
+    <div class="cl-ey">Next step</div>
+    <div class="cl-ttl">Which direction<br>speaks to you?</div>
+    <div class="cl-bd">Share your instinct — there are no wrong answers here. Once you've identified the colour and typography that feel right for ARtho Move, we'll combine them into a complete design system and move into high-fidelity screens.</div>
+    <div class="cl-cards">
+      <div class="cl-card">
+        <div class="cl-card-lbl">Colour Palette</div>
+        <div class="cl-opt"><div class="cl-dot" style="background:#3D6B8E"></div><div class="cl-opt-txt">A — Slate &amp; Cream</div></div>
+        <div class="cl-opt"><div class="cl-dot" style="background:#2E7A7A"></div><div class="cl-opt-txt">C — Deep Teal &amp; Oat</div></div>
+        <div class="cl-opt"><div class="cl-dot" style="background:#0090FF"></div><div class="cl-opt-txt">E — Clinical Edge</div></div>
+        <div class="cl-opt"><div class="cl-dot" style="background:#3A8A82"></div><div class="cl-opt-txt">F — Eucalyptus &amp; Slate</div></div>
+      </div>
+      <div class="cl-card">
+        <div class="cl-card-lbl">Typography</div>
+        <div class="cl-opt"><div class="cl-dot" style="background:#8A7A68"></div><div class="cl-opt-txt">Style 01 — The Specialist</div></div>
+        <div class="cl-opt"><div class="cl-dot" style="background:#5870A0"></div><div class="cl-opt-txt">Style 02 — The Platform</div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+// Active nav on scroll using IntersectionObserver
+const sections = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav-link');
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const a = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+      if (a) a.classList.add('active');
+    }
+  });
+}, { threshold: 0.35 });
+
+sections.forEach(s => obs.observe(s));
+
+// Smooth nav click
+links.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
